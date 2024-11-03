@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>About Me</title>
+    <style>
+        /* General Reset */
+        body, h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(/Users/jujuj/Desktop/Rio3.jpg); 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 200%;
+            color: #333;
+            text-align: center;
+            margin: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: rgba(139, 69, 19, 0.8); /* Semi-transparent saddle brown */
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        #greeting, #date-time {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Section Styling */
+        main {
+            margin-top: 20px;
+        }
+
+        section {
+            background-color: rgba(245, 222, 179, 0.9); /* Semi-transparent wheat color */
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: rgba(160, 82, 45, 0.8); /* Semi-transparent sienna */
+            color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My "About Me" Page!</h1>
+        <p id="greeting"></p>
+        <p id="date-time"></p>
+        <script>
+            // JavaScript to display a greeting based on the time of day
+            var hours = new Date().getHours();
+            var greeting = hours < 12 ? "Good morning!" : hours < 18 ? "Good afternoon!" : "Good evening!";
+            document.getElementById("greeting").textContent = greeting;
+
+            // JavaScript to display the current day and time with updating seconds
+            function updateTime() {
+                var now = new Date();
+                var options = { weekday: 'long', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+                var dayTime = now.toLocaleString('en-US', options);
+                document.getElementById("date-time").textContent = "Today is: " + dayTime;
+            }
+            setInterval(updateTime, 1000); // Update the time every second
+            updateTime(); // Initial call to display the time right away
+        </script>
+    </header>
+
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Welcome to my "About Me" page! I am an international student with a vast background and some old lady's hobbies. I have some exciting goals and I work really hard to achieve them. </p>
+        </section>
+
+        <section>
+            <h2>My Hobbies</h2>
+            <p>I spend my free time balancing between my hobbies. Some of those hobbies include reading, baking, crocheting and knitting, playing the piano, and traveling. I have already read 33 books this year, baked 5 new recipes this past month, crocheted 3 new amigurumi since January, and traveled to 7 countries and 8 U.S. states since the year started.</p>
+        </section>
+
+        <section>
+            <h2>A Bit About My Background</h2>
+            <p>I am 24 years old. I am from Rio de Janeiro, Brazil. I loved my childhood in Brazil and would not change being raised there for anywhere else. I served a mission in the São Paulo North mission and moved here soon after I finished. I have an older brother who is also living here in Utah. My dad still lives in Rio, but my mom now lives in the U.S. as well.</p>
+        </section>
+
+        <section>
+            <h2>My Goals</h2>
+            <p>Within the next year I intend read 35 more books and I new car. In the next 5 years I plan on graduating from BYU and starting my own family. In 10 years I hope to have travelled to all continents and to have had at least one child.</p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; Copyright 2024: Juliana Albuquerque | email: jupialbuquerque@gmail.com | phone: 469-794-5484
+    </footer>
+</body>
+</html>
